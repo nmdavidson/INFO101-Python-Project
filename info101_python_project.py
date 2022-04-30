@@ -60,7 +60,7 @@ def last_period(list, days): #returns sum and # of txs for last 31 days
             difference = time_delta('today', i, list)
         return sum, txs
 
-rows = open_file(getcwd() + '/Downloads/INFO101-Python-Project-main/amazon_history.csv')
+rows = open_file(getcwd() + '/Downloads/INFO101-Python-Project-main/amazon_history.csv') #location of amazon .csv
 
 purchase_sum = 0
 purchase_cats = []
