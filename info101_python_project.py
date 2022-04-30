@@ -51,7 +51,7 @@ def last_period(list, days): #returns sum and # of txs for last # of days specif
     txs = 0
     i = len(list) - 1 
     if(difference > days):
-        return 'Nothing to show'
+        return 'No purchases', 'No txs'
     else:
         while(difference < days):
             sum += net_cost(elem_at_index(i, 12, list), elem_at_index(i , 13, list))
