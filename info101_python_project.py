@@ -45,7 +45,7 @@ def net_cost(a, b): #returns float of price times quantity
 def time_delta(a, b, list): #returns difference in days between two datetimes
     if(a == 'today'): return (datetime.today() - date_at_index(b, list)).days
     else: return (date_at_index(a, list) - date_at_index(b, list)).days
-def last_period(list, days): #returns sum and # of txs for last 31 days
+def last_period(list, days): #returns sum and # of txs for last # of days specified
     difference = time_delta('today', -1, list)
     sum = 0
     txs = 0
