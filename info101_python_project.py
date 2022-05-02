@@ -16,31 +16,30 @@ txs_month, total_year, txs_year): #formats output to be easily readable in the t
     print('fav. category: ___________________ ' + cat)
     print('fav. vendor, # of purchases: ' + vend + ', ' + str(txs_vend))
     print('////////////////////////////////////////////')
-    print('---------------month to date----------------')
+    print('-----------------past month-----------------')
     print('total purchases: __________________ ~$ ' + str(round(total_month, 2)))
     print('total transactions: ______________________ ' + str(txs_month))
     print('////////////////////////////////////////////')
-    print('----------------year to date---------------')
+    print('------------------past year-----------------')
     print('total purchases: ________________ ~$ ' + str(round(total_year, 2)))
     print('total transactions: _____________________ ' + str(txs_year))
     print('////////////////////////////////////////////\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
 def most_common(list): #returns the most frequent entry of a list
     return(mode(list))
-def open_file(file): #a function that opens the .csv and returns each row as an element of a list
+def open_file(file): #a function that opens the .csv and returns a list with each row as an element
     file = open(file)
     csv_reader = csv.reader(file)
     header = [next(csv_reader)]
     rows = []
 
-    for row in csv_reader:
-        rows.append(row)
+    for row in csv_reader: rows.append(row)
     file.close()
     return rows
 def date_at_index(row, list): #returns a formatted date of the row specified
     return datetime.strptime(list[row][0], '%m/%d/%y')
 def elem_at_index(row, index, list): #returns the element in the row of the list specified
     return list[row][index]
-def net_cost(a, b): #returns float of price times quantity
+def net_cost(a, b): #returns float of price * quantity
     return float(a.strip('$'))*int(b)
 def time_delta(a, b, list): #returns difference in days between two datetimes
     if(a == 'today'): return (datetime.today() - date_at_index(b, list)).days
